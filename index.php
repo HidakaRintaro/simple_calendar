@@ -38,7 +38,7 @@
   // 月の配列の初期化
   for ($i = 0; $i < floor($week_days / 7); $i++) {
     for ($j = 0; $j < 7; $j++) { 
-      $month_ary[$i][$j] = 0;
+      $month_ary[$i][$j] = '';
     }
   }
 
@@ -97,7 +97,6 @@
 <?php foreach ($month_ary as $row) : ?>
     <tr>
 <?php   foreach ($row as $val) : ?>
-<?php     if ($val == 0) $val = ''; ?>
       <td><?php echo $val; ?></td>
 <?php   endforeach; ?>
     </tr>
