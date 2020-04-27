@@ -1,7 +1,7 @@
 <?php
 
   // 変数の初期化
-  $week_list = ['日', '月', '火', '水', '木', '金', '土'];
+  $week_color = ['bg_red', 'bg_white', 'bg_white', 'bg_white', 'bg_white', 'bg_white', 'bg_blue'];
   $week_cnt = [0, 0, 0, 0, 0, 0, 0];
   $month_ary = [];
   $max_year = 2100;
@@ -68,6 +68,7 @@
 <head>
   <meta charset="UTF-8">
   <title>万年カレンダー</title>
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <form method="post">
@@ -90,14 +91,12 @@
   <p><?php echo $year; ?>年<?php echo $month; ?>月</p>
   <table>
     <tr>
-<?php foreach ($week_list as $val) : ?>
-      <th><?php echo $val; ?></th>
-<?php endforeach; ?>
+    <th class="red">日</th><th>月</th><th>火</th><th>水</th><th>木</th><th>金</th><th class="blue">土</th>
     </tr>
 <?php foreach ($month_ary as $row) : ?>
     <tr>
-<?php   foreach ($row as $val) : ?>
-      <td><?php echo $val; ?></td>
+<?php   foreach ($row as $key => $val) : ?>
+      <td class="<?php echo $week_color[$key] ?>"><?php echo $val; ?></td>
 <?php   endforeach; ?>
     </tr>
 <?php endforeach; ?>
